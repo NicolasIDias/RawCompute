@@ -15,4 +15,4 @@ typedef struct r_tensor_t
 // TensorA and TensorB should be the same size ()
 float r_tensor_dot(RNONNULL RTensor *tensorA, RNONNULL RTensor *tensorB);
 
-void rtensor_matmul(RTensor *originA, RTensor *originB, RTensor *dest);
+void r_tensor_matmul(const RNONNULL RTensor *originA, const RNONNULL RTensor *originB, RNONNULL RTensor *dest);

@@ -16,3 +16,31 @@ float r_tensor_dot(RNONNULL RTensor *tensorA, RNONNULL RTensor *tensorB)
     }
     return result;
 }
+
+void r_tensor_matmul(const RNONNULL RTensor *originA, const RNONNULL RTensor *originB, RNONNULL RTensor *dest)
+{
+
+    if (originA->cols != originB->rows)
+    {
+        printf("[ERROR]: originA->cols must equal originB->rows\n");
+        exit(1);
+    }
+
+    RTensor temp;
+    temp.rows = originA->rows;
+    temp.cols = originB->cols;
+    temp.stride = temp.rows;
+    temp.data = malloc(temp.rows * temp.cols * sizeof(float));
+
+    for (int i = 0; i < originA->rows; i++)
+        for (int j = 0; j < originB->cols; j++)
+        {
+            float sum = 0.0f;
+            for (int k = 0; k < originA->cols; k++)
+                sum += originA->data[RTensorIDX(originA, i, k)] * originB->data[RTensorIDX(originB, k, j)];
+            temp.data[RTensorIDX(&temp, i, j)] = sum;
+        }
+    if (dest->data != NULL)
+        free(dest->data);
+    *dest = temp;
+}
