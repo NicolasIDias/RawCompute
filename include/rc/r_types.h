@@ -8,4 +8,4 @@
 #define RNONNULL
 #define RNULLABLE
 
-#define RMatrixIDX(i, j, cols) (i * (cols) + j)
+#define RMatrixIDX(i, j, cols) ((i * (cols)) + j)

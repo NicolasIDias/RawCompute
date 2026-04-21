@@ -47,8 +47,6 @@ RMatrix *r_mat_transpose(const RNONNULL RMatrix *matrix)
             transposed_matrix->data[RMatrixIDX(j, i, transposed_matrix->cols)] = matrix->data[RMatrixIDX(i, j, matrix->cols)];
         }
     }
-    r_print_matrix(matrix, "MATRIZ NORMAAAL");
-    r_print_matrix(transposed_matrix, "MATRIZ TRANSPOSTAAA");
     return transposed_matrix;
 }
 

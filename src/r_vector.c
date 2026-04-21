@@ -51,7 +51,7 @@ float r_vec_dot(const RNONNULL RVector *vector1, const RNONNULL RVector *vector2
     }
 
     float result = 0.0f;
-    for (int i = 0; i < vector1->size; i++)
+    for (size_t i = 0; i < vector1->size; i++)
     {
         result += vector1->data[i] * vector2->data[i];
     }
@@ -61,7 +61,7 @@ float r_vec_dot(const RNONNULL RVector *vector1, const RNONNULL RVector *vector2
 
 void r_add_bias(const RNONNULL RVector *vector, float bias)
 {
-    for (int i = 0; i < vector->size; i++)
+    for (size_t i = 0; i < vector->size; i++)
     {
         vector->data[i] += bias;
     }
@@ -70,7 +70,7 @@ void r_add_bias(const RNONNULL RVector *vector, float bias)
 void r_print_vector(RNONNULL RVector *vector, const RNONNULL char *name)
 {
     printf("%s = [", name);
-    for (int i = 0; i < vector->size; i++)
+    for (size_t i = 0; i < vector->size; i++)
     {
         printf("%.2f", vector->data[i]);
         if (i < vector->size - 1)

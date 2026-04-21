@@ -25,10 +25,14 @@ RMatrix *r_layer_forward(const RNONNULL RLayerDense *layer, const RNONNULL RMatr
 
     r_free_matrix(transposed_weights);
 
-    for (int i = 0; i < result->rows; i++)
+    for (size_t i = 0; i < result->rows; i++)
     {
-        r_add_bias(result->data, layer->biases->data[i]);
+        // seg fault?
+        // r_add_bias(result->data, layer->biases->data[i]);
+        for (size_t j = 0; j < result->cols; j++)
+        {
+            result->data[RMatrixIDX(i, j, result->cols)] += layer->biases->data[j];
+        }
     }
-
     return result;
 }
