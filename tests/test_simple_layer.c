@@ -1,9 +1,6 @@
-#include <rc/r_types.h>
-#include <rc/r_vector.h>
-#include <rc/r_matrix.h>
-#include <rc/r_layer_dense.h>
+#include "common.h"
 
-int main()
+int main(void)
 {
     printf("=== NEURAL NETWORKS FROM SCRATCH (C) n===\n\n");
 
@@ -53,7 +50,7 @@ int main()
         {3.0, 1.0, 4.0, 0.5}};
 
     RMatrix *batch = r_create_matrix(3, 4);
-    //printf("Matrix created\n");
+    // printf("Matrix created\n");
 
     for (int i = 0; i < 3; i++)
     {
@@ -66,7 +63,7 @@ int main()
     RLayerDense *layer = malloc(sizeof(RLayerDense));
     layer->weights = r_create_matrix(3, 4);
     layer->biases = r_create_vector(3);
-    //printf("Layer created\n");
+    // printf("Layer created\n");
 
     float w_data[3][4] = {
         {0.2, 0.8, -0.5, 1.0},
@@ -84,7 +81,7 @@ int main()
     }
 
     RMatrix *output_batch = r_layer_forward(layer, batch);
-    //printf("Layer forwared\n");
+    // printf("Layer forwared\n");
 
     r_print_matrix(output_batch, "Layer output (batch)");
 
