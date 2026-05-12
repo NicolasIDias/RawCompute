@@ -19,7 +19,8 @@ This project is perfect for learning how neural network computations work at the
 - ✅ Basic tensor operations (matrices and vectors)
 - ✅ Dense layers with forward propagation
 - ✅ Activation functions
-- ⏳ Loss functions and optimization
+- ✅ Loss functions
+- ⏳ Optimization
 - ⏳ Backpropagation
 - ⏳ Additional layer types
 
