@@ -27,8 +27,8 @@ static void assert_float_close(float actual, float expected, float abs_tol, floa
 
     if (diff > tol)
     {
-        fprintf(stderr, "ASSERT_FLOAT_CLOSE failed: %s (actual=%.8f expected=%.8f diff=%.8f tol=%.8f)\n", msg,
-                actual, expected, diff, tol);
+        fprintf(stderr, "ASSERT_FLOAT_CLOSE failed: %s (actual=%.8f expected=%.8f diff=%.8f tol=%.8f)\n", msg, actual,
+                expected, diff, tol);
     }
 
     assert(diff <= tol);
@@ -300,8 +300,7 @@ static void test_softmax_single_element(void)
     {
         char msg[96];
         snprintf(msg, sizeof(msg), "softmax_single_element row=%zu", i);
-        assert_float_close(output->data[RMatrixIDX(i, 0, output->cols)], 1.0f, DEFAULT_ABS_TOL, DEFAULT_REL_TOL,
-                           msg);
+        assert_float_close(output->data[RMatrixIDX(i, 0, output->cols)], 1.0f, DEFAULT_ABS_TOL, DEFAULT_REL_TOL, msg);
     }
 
     r_free_matrix(input);

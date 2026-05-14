@@ -68,7 +68,7 @@ The forward pass computes: `output = input × weights^T + bias`
 
 ### Build
 ```bash
-gcc gcc tests/test_softmax.c src/r_matrix.c src/r_activation.c src/r_vector.c src/r_layer_dense.c -I./include/ -o test_neuron -lm
+gcc gcc tests/test_activation.c src/r_matrix.c src/r_activation.c src/r_vector.c src/r_layer_dense.c -I./include/ -o test_neuron -lm
 ```
 
 ### Run
