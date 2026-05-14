@@ -8,5 +8,6 @@
 #include <rc/r_activation.h>
 #include <rc/r_layer_dense.h>
 #include <rc/r_loss_grad.h>
+#include <rc/r_activation_grad.h>
 
 #endif
